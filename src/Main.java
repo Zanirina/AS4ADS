@@ -1,5 +1,5 @@
 public class Main {
-    //totototo gjkddgd ss d
+    //totototo gjkddgd ss d аааа
 
     public static void main(String[] args) {
         WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
