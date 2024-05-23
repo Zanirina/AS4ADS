@@ -1,4 +1,5 @@
 public class Main {
+    //totototo
 
     public static void main(String[] args) {
         WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
