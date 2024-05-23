@@ -1,6 +1,6 @@
 public class Main {
     //работай
-    // ny pls work
+    // ny pls work ;s;sla
     public static void main(String[] args) {
         WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
         fillWithWeights(weightedGraph);
