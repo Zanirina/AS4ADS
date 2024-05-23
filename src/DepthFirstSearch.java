@@ -9,10 +9,10 @@ public class DepthFirstSearch<V> extends Search<V> {
     private void dfs(MyGraph<V> graph, V source) {
         marked.add(source);
 
-        for (V v : graph.getVertex(source).getAdjacentVerticesData()) {
+        for (Object v : graph.getVertex(source).getAdjacentVerticesData()) {
             if (!marked.contains(v)) {
-                edgeTo.put(v, source);
-                dfs(graph, v);
+                edgeTo.put((V) v, source);
+                dfs(graph, (V) v);
             }
         }
     }
