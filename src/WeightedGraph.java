@@ -4,7 +4,7 @@ import java.util.Map;
 public class WeightedGraph<V> {
     private boolean directed;
     private Map<V, Vertex<V>> map = new HashMap<>();
-//change
+
     public WeightedGraph(boolean directed) {
         this.directed = directed;
     }

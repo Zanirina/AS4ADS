@@ -1,14 +1,12 @@
-import java.util.*;
-
-public class MyGraph<V> extends WeightedGraph {
-    public MyGraph(boolean directed){
+public class MyGraph<V> extends WeightedGraph<V> {
+    public MyGraph(boolean directed) {
         super(directed);
     }
 
-    public void addEdge(V source, V dest){
-        super.addEdge(source, dest,1.0);
-    }
+    public void addEdge(V source, V dest) {
 
+        super.addEdge(source, dest, 1.0);
+    }
 
 
 }
