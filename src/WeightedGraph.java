@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class WeightedGraph<V> {
     private boolean directed;
@@ -17,15 +18,15 @@ public class WeightedGraph<V> {
     }
 
     public void addEdge(V source, V dest, double weight) {
-        if (map.containsKey(source) == false) {
+        if (!map.containsKey(source)) {
             addVertex(source);
         }
-        if (map.containsKey(dest) == false) {
+        if (!map.containsKey(dest)) {
             addVertex(dest);
         }
 
         map.get(source).addAdjacentVertex(map.get(dest), weight);
-        if (directed == false) {
+        if (!directed) {
             map.get(dest).addAdjacentVertex(map.get(source), weight);
         }
     }
