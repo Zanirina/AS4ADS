@@ -23,6 +23,8 @@ public class Main {
         System.out.println("BFS:");
         Search<String> bfs = new BreadthFirstSearch<>(graph, "Almaty");
         outputPath(bfs, "Kyzylorda");
+
+        //hi
     }
 
     public static void fillWithoutWeights(MyGraph<String> graph) {
