@@ -1,10 +1,9 @@
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class DijkstraSearch<V> extends Search<V> {
-    private Set<V> unsettledNodes;
-    private Map<V, Double> distances;
-    private WeightedGraph<V> graph;
+
+    private Map<V, Double> distances = new HashMap<>();
 
     public DijkstraSearch(WeightedGraph<V> graph, V source) {
         super(source);
@@ -20,41 +19,31 @@ public class DijkstraSearch<V> extends Search<V> {
             V vertex = null;
             double minDist = Double.POSITIVE_INFINITY;
 
-            for(V v: distances.keySet())
-        }
-
-
-    }
-
-    private double getDistance(V node, V target) {
-        for (Edge<V> edge : graph.getEdges(node)) {
-            if (edge.getDest().equals(target))
-                return edge.getWeight();
-        }
-
-        throw new RuntimeException("Not found!");
-    }
-
-    private V getVertexWithMinimumWeight(Set<V> vertices) {
-        V minimum = null;
-        for (V V : vertices) {
-            if (minimum == null) {
-                minimum = V;
-
-                continue;
+            for (V v : distances.keySet()) {
+                if (!marked.contains(v) && distances.get(v) < minDist) {
+                    vertex = v;
+                    minDist = distances.get(v);
+                }
+            }
+            if (vertex == null) {
+                break;
             }
 
-            if (getShortestDistance(V) < getShortestDistance(minimum))
-                minimum = V;
+            marked.add(vertex);
+
+            for (V v : graph.getAdjacentVertices(vertex)) {
+                if (!marked.contains(v)) {
+                    double newDist = distances.get(vertex)+graph.getWeight(vertex, v);
+                    if(newDist<distances.get(v)){
+                        distances.put(v,newDist);
+                        edgeTo.put(v,vertex);
+                    }
+                }
+            }
+
         }
 
-        return minimum;
-    }
 
-    private double getShortestDistance(V destination) {
-        Double d = distances.get(destination);
-
-        return (d == null ? Double.MAX_VALUE : d);
     }
 }
 

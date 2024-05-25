@@ -4,9 +4,9 @@ public class Main {
         WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
         fillWithWeights(weightedGraph);
 
-        System.out.println("Dijkstra:");
-        Search<String> djk = new DijkstraSearch<>(weightedGraph, "Almaty");
-        outputPath(djk, "Kyzylorda");
+//        System.out.println("Dijkstra:");
+//        Search<String> djk = new DijkstraSearch<>(weightedGraph, "Almaty");
+//        outputPath(djk, "Kyzylorda");
 
 
         System.out.println("--------------------------------");
@@ -24,7 +24,8 @@ public class Main {
         Search<String> bfs = new BreadthFirstSearch<>(graph, "Almaty");
         outputPath(bfs, "Kyzylorda");
 
-        //hi
+        System.out.println("--------------------------------");
+        System.out.println(graph.getVertex("Astana"));
     }
 
     public static void fillWithoutWeights(MyGraph<String> graph) {
